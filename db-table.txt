@@ -1,0 +1,10 @@
+CREATE TABLE users (
+    username VARCHAR(20) PRIMARY KEY not null,
+    pwd LONGTEXT not null,
+    user_type VARCHAR(10) not null
+);
+
+INSERT INTO users (username, pwd, user_type) VALUES ('Max', 'password', 'admin');
+INSERT INTO users (username, pwd, user_type) VALUES ('John', 'password', 'demander');
+INSERT INTO users (username, pwd, user_type) VALUES ('Tom', 'password', 'supplier');
+INSERT INTO users (username, pwd, user_type) VALUES ('Jerry', 'password', 'supplier');

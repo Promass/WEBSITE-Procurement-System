@@ -1,0 +1,35 @@
+.Supplier-revenue-box {
+    background: #202020;
+    height: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Supplier-child-box {
+    display: flex;
+    height: calc(100vh - 113px - 320px);
+}
+
+.Supplier-inventory-box {
+    padding: 20px;
+    background: #202020;
+    border-radius: 10px;
+    height: calc(100vh - 113px - 320px);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Supplier-item-list-box {
+    overflow-y: scroll;
+    max-height: calc(100vh - 113px - 113px - 320px);
+}
+
+.Supplier-item-box {
+    background: #303030;
+    padding: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

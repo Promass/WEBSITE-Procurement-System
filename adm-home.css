@@ -1,0 +1,104 @@
+.Adm-Home-revenue-box {
+    background: #202020;
+    height: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Adm-Home-child-box {
+    display: flex;
+    height: calc(100vh - 113px - 320px);
+}
+
+.Adm-Home-pending-demand-box {
+    background: #202020;
+    border-radius: 10px;
+    padding: 20px;
+    width: 40%;
+    margin-right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Adm-Home-demand-summary-box {
+    background: #202020;
+    border-radius: 10px;
+    padding: 20px;
+    width: 60%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Adm-Home-pending-demand-list-box {
+    overflow-y: scroll;
+    max-height: calc(100vh - 113px - 320px - 113px);
+}
+
+.Adm-Home-demand-box {
+    background: #303030;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Adm-Home-demand-summary-list-box {
+    max-height: calc(100vh - 113px - 320px - 113px);
+    display: flex;
+    overflow-y: scroll;
+}
+
+.Adm-Home-demand-info {
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+.Adm-Home-reject-demand-btn {
+    border: none;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: white;
+    background: #af4a4a;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 5px 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Adm-Home-reject-demand-btn:hover {
+    background: #772d2d;
+    transition: 0.3s;
+}
+
+.Adm-Home-demand-quotation {
+    padding: 0px 20px 0px 0px;
+    width: 50%;
+}
+
+.Adm-Home-demand-quotation-box {
+    background: #303030;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Adm-Home-accept-quotation-btn {
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: white;
+    background: #5568fe;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 5px 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Adm-Home-accept-quotation-btn:hover {
+    background: #3b48ad;
+    transition: 0.3s;
+}

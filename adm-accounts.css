@@ -1,0 +1,87 @@
+.Adm-account-box {
+    display: flex;
+}
+
+.Adm-account-supp-dem-box {
+    width: 50%;
+    padding: 20px;
+    background: #202020;
+    border-radius: 10px;
+    height: calc(100vh - 113px - 196px);
+}
+
+.Adm-account-create-box {
+    max-width: 527.5px;
+    width: 527.5px;
+    padding: 20px;
+    margin-top: 20px;
+    background: #202020;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Adm-account-form-flex {
+    display: flex;
+    width: 100%;
+}
+
+.Adm-account-form-input {
+    background: #303030;
+    border-color: #303030;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    color: white;
+}
+
+.Adm-account-form-input:focus {
+    background: #303030;
+    color: white;
+}
+
+.Adm-account-create-btn {
+    border: none;
+    background: #5568fe;
+    height: 58px;
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-weight: 500;
+}
+
+.Adm-account-create-btn:hover {
+    background: #3b48ad;
+    transition: 0.3s;
+}
+
+.Adm-account-account-list-box {
+    overflow-y: scroll;
+    max-height: calc(100vh - 113px - 196px - 113px);
+}
+
+.Adm-account-account-box {
+    background: #303030;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Adm-account-delete-btn {
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: white;
+    background: #af4a4a;
+    transition: 0.3s;
+    padding: 5px 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-weight: 500;
+}
+
+.Adm-account-delete-btn:hover {
+    background: #772d2d;
+    transition: 0.3s;
+}

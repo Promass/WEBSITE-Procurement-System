@@ -1,0 +1,69 @@
+.Demander-child-box {
+    height: 100%;
+    width: 40%;
+}
+
+.Demander-pending-demand-box {
+    background: #202020;
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: calc(calc(100vh - 113px - 20px) / 2.0);
+}
+
+.Demander-pending-demand-list-box {
+    overflow-y: scroll;
+    max-height: calc(calc(100vh - 113px - 20px - 113px - 113px) / 2.0);
+}
+
+.Demander-demand-box {
+    background: #303030;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Demander-inventory-box {
+    width: 65%;
+    padding: 20px;
+    background: #202020;
+    border-radius: 10px;
+    height: calc(100vh - 113px);
+    margin-left: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Demander-item-list-box {
+    overflow-y: scroll;
+    max-height: calc(100vh - 113px - 113px);
+}
+
+.Demander-item-box {
+    background: #303030;
+    padding: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Demander-demand-btn {
+    border: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: white;
+    background: #5568fe;
+    width: 100%;
+    padding: 5px 0px;
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-weight: 500;
+}
+
+.Demander-demand-btn:hover {
+    background: #3b48ad;
+    transition: 0.3s;
+}
