@@ -10,7 +10,7 @@ class Dbh {
 
             $dbusername = "root";
             $dbpassword = "";
-            $dbname = "nvke_procurement_system"
+            $dbname = "nvke_procurement_system";
 
             $dbh = new PDO('mysql:host=localhost;dbname='.$dbname, $dbusername, $dbpassword);
             return $dbh;

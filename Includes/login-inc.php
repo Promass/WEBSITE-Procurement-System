@@ -1,5 +1,5 @@
 <!-- Page Name: login-inc.php -->
-<!-- Description: Once the clickes "Sign In" in the index.php page, this script will run. -->
+<!-- Description: Once the user clickes "Sign In" in the index.php page, this script will run. -->
 
 <?php
 

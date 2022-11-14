@@ -11,13 +11,13 @@ class Login extends Dbh {
 
         if (!$stmt->execute(array($username))) {
             $stmt = null;
-            header("location: ../index.php?error=stmtfailed");
+            header("location: ../index.php?msg=stmtfailed");
             exit();
         }
 
         if ($stmt->rowCount() == 0) {
             $stmt = null;
-            header("location: ../index.php?error=usernotfound");
+            header("location: ../index.php?msg=usernotfound");
             exit();
         }
 
@@ -28,13 +28,13 @@ class Login extends Dbh {
 
             if (!$nextstmt->execute(array($username, $password))) {
                 $nextstmt = null;
-                header("location: ../index.php?error=stmtfailed");
+                header("location: ../index.php?msg=stmtfailed");
                 exit();
             }
     
             if ($nextstmt->rowCount() == 0) {
                 $nextstmt = null;
-                header("location: ../index.php?error=usernotfound");
+                header("location: ../index.php?msg=usernotfound");
                 exit();
             }
 
@@ -58,7 +58,7 @@ class Login extends Dbh {
             }
         }
         else {
-            header("location: ../index.php?error=wrongpassword");
+            header("location: ../index.php?msg=wrongpassword");
             exit();
         }
     }

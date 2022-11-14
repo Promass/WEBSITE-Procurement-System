@@ -169,26 +169,29 @@ if (!isset($_SESSION["username"])) {
 
             <!-- Create Account -->
             <div class="Adm-account-create-box">
-                <div class="Adm-account-form-flex" style="margin-bottom: 20px;">
-                    <div class="form-floating" style="width: 50%; margin-right: 10px;">
-                        <input type="text" class="form-control Adm-account-form-input" id="username" placeholder="Enter username" name="username" autocomplete="off" maxlength = "19">
-                        <label for="username">Username</label>
+                <form action="Includes/signup-inc.php" method="post">
+                    <div class="Adm-account-form-flex" style="margin-bottom: 20px;">
+                        <div class="form-floating" style="width: 50%; margin-right: 10px;">
+                            <input type="text" class="form-control Adm-account-form-input" id="username" placeholder="Enter username" name="username" autocomplete="off" maxlength = "19">
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="form-floating" style="width: 50%; margin-left: 10px;">
+                            <input type="text" class="form-control Adm-account-form-input" id="password" placeholder="Enter password" name="password" autocomplete="off">
+                            <label for="password">Password</label>
+                        </div>
                     </div>
-                    <div class="form-floating" style="width: 50%; margin-left: 10px;">
-                        <input type="text" class="form-control Adm-account-form-input" id="password" placeholder="Enter password" name="password" autocomplete="off">
-                        <label for="password">Password</label>
+                    <div class="Adm-account-form-flex">
+                        <div class="form-floating" style="width: 50%; margin-right: 10px;">
+                            <select class="form-select Adm-account-form-input" id="type" name="type">
+                                <option></option>
+                                <option>Supplier</option>
+                                <option>Demander</option>
+                            </select>
+                            <label for="type" class="form-label">Account Type</label>
+                        </div>
+                        <button class="Adm-account-create-btn" type="submit" name="submit" style="width: 50%; margin-left: 10px;">Create Account</button>
                     </div>
-                </div>
-                <div class="Adm-account-form-flex">
-                    <div class="form-floating" style="width: 50%; margin-right: 10px;">
-                        <select class="form-select Adm-account-form-input" id="sel1" name="sellist">
-                            <option>Supplier</option>
-                            <option>Demander</option>
-                        </select>
-                        <label for="sel1" class="form-label">Account Type</label>
-                    </div>
-                    <button class="Adm-account-create-btn" type="submit" name="adm-create-account" style="width: 50%; margin-left: 10px;">Create Account</button>
-                </div>
+                </form>
             </div>
             <!-- Create Account -->
 
