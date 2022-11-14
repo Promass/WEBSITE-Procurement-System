@@ -5,7 +5,7 @@
 
 class Dbh {
     //This class is used as a parent class so that other children class can use this connection to query data from the database.
-    protected function connect() {
+    protected static function connect() {
         try {
 
             $dbusername = "root";
