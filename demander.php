@@ -2,6 +2,9 @@
 <!-- Description: User interface for demander account type -->
 
 <?php
+include "Classes/dbh-classes.php";
+include "Classes/display-classes.php";
+
 session_start();
 
 //This if statement makes sure that only demanders have access to this page
@@ -102,26 +105,9 @@ if (!isset($_SESSION["username"])) {
                     <div class="Demander-pending-demand-box">
                         <div class="Bottom-border">Pending Demands</div>
                         <div class="Demander-pending-demand-list-box">
-                            <div class="Demander-demand-box">
-                                <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                                <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                                <div class="Tag-yellow">PENDING</div>
-                            </div>
-                            <div class="Demander-demand-box">
-                                <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                                <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                                <div class="Tag-yellow">PENDING</div>
-                            </div>
-                            <div class="Demander-demand-box">
-                                <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                                <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                                <div class="Tag-yellow">PENDING</div>
-                            </div>
-                            <div class="Demander-demand-box">
-                                <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                                <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                                <div class="Tag-yellow">PENDING</div>
-                            </div>
+                            <?php
+                                Display::demanderPendingDemands($_SESSION["username"]);
+                            ?>
                         </div>
                     </div>
                     <!-- Pending Demands -->
@@ -132,42 +118,9 @@ if (!isset($_SESSION["username"])) {
                 <div class="Demander-inventory-box">
                     <div class="Bottom-border">Inventory</div>
                     <div class="Demander-item-list-box">
-                        <div class="Demander-item-box">
-                            <div><span class="Color-blue">Item ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Name: </span>Shakespear's Book</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Demander-demand-btn">Demand</button>
-                        </div>
-                        <div class="Demander-item-box">
-                            <div><span class="Color-blue">Item ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Name: </span>Shakespear's Book</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Demander-demand-btn">Demand</button>
-                        </div>
-                        <div class="Demander-item-box">
-                            <div><span class="Color-blue">Item ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Name: </span>Shakespear's Book</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Demander-demand-btn">Demand</button>
-                        </div>
-                        <div class="Demander-item-box">
-                            <div><span class="Color-blue">Item ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Name: </span>Shakespear's Book</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Demander-demand-btn">Demand</button>
-                        </div>
-                        <div class="Demander-item-box">
-                            <div><span class="Color-blue">Item ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Name: </span>Shakespear's Book</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Demander-demand-btn">Demand</button>
-                        </div>
-                        <div class="Demander-item-box">
-                            <div><span class="Color-blue">Item ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Name: </span>Shakespear's Book</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Demander-demand-btn">Demand</button>
-                        </div>
+                        <?php
+                            Display::demanderItems();
+                        ?>
                     </div>
                 </div>
                 <!-- Inventory -->

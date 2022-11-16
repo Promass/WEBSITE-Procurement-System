@@ -87,7 +87,7 @@ if (!isset($_SESSION["username"])) {
                     <div class="Bottom-border">Supplier Accounts</div>
                     <div class="Adm-account-account-list-box">
                         <?php
-                            Display::supplierAccount();
+                            Display::supplierAccounts();
                         ?>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ if (!isset($_SESSION["username"])) {
                     <div class="Bottom-border">Demander Accounts</div>
                     <div class="Adm-account-account-list-box">
                         <?php
-                            Display::demanderAccount();
+                            Display::demanderAccounts();
                         ?>
                     </div>
                 </div>

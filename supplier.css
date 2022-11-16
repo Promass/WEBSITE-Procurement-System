@@ -16,6 +16,7 @@
     padding: 20px;
     background: #202020;
     border-radius: 10px;
+    width: 33.33%;
     height: calc(100vh - 113px - 320px);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

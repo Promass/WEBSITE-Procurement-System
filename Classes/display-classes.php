@@ -5,7 +5,7 @@
 
 class Display extends Dbh {
 
-    public static function supplierAccount() {
+    public static function supplierAccounts() {
         $stmt = self::connect()->prepare("SELECT * FROM users WHERE user_type = 'supplier' AND state = 1;");
 
         if (!$stmt->execute()) {
@@ -33,7 +33,7 @@ class Display extends Dbh {
         $stmt = null;
     }
 
-    public static function demanderAccount() {
+    public static function demanderAccounts() {
         $stmt = self::connect()->prepare("SELECT * FROM users WHERE user_type = 'demander' AND state = 1;");
 
         if (!$stmt->execute()) {
@@ -83,6 +83,86 @@ class Display extends Dbh {
                     <input type="hidden" name="item-id" value="'. $data[$idx]["iid"] .'">
                     <button class="Adm-item-delete-btn" type="submit" name="submit">Delete Item</button>
                 </form>
+            </div>
+            ';
+        }
+
+        $stmt = null;
+    }
+
+    public static function demanderItems() {
+        $stmt = self::connect()->prepare("SELECT * FROM items WHERE availability = 1;");
+
+        if (!$stmt->execute()) {
+            $stmt = null;
+            header("location: ../adm-items.php?msg=stmtfailed");
+            exit();
+        }
+
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        for ($idx = 0; $idx < $stmt->rowCount(); $idx++) {
+            echo 
+            '
+            <div class="Demander-item-box">
+                <div><span class="Color-blue">Item ID: </span>'. $data[$idx]["iid"] .'</div>
+                <div><span class="Color-blue">Name: </span>'. $data[$idx]["item_name"] .'</div>
+                <div><span class="Color-blue">Description: </span>'. $data[$idx]["item_description"] .'</div>
+                <form action="Includes/demand-inc.php" method="post">
+                    <input type="hidden" name="item-id" value="'. $data[$idx]["iid"] .'">
+                    <input type="hidden" name="username" value="'. $_SESSION["username"] .'">
+                    <button class="Demander-demand-btn" type="submit" name="submit">Demand</button>
+                </form>
+            </div>
+            ';
+        }
+
+        $stmt = null;
+    }
+
+    public static function demanderPendingDemands($demander) {
+        $stmt = self::connect()->prepare("SELECT D.did, I.item_name FROM demands D, items I WHERE D.demander = ? AND state = 'pending' AND D.iid = I.iid;");
+
+        if (!$stmt->execute(array($demander))) {
+            $stmt = null;
+            header("location: ../demander.php?msg=stmtfailed");
+            exit();
+        }
+
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        for ($idx = 0; $idx < $stmt->rowCount(); $idx++) {
+            echo 
+            '
+            <div class="Demander-demand-box">
+                <div><span class="Color-blue">Demand ID: </span>'. $data[$idx]["did"] .'</div>
+                <div><span class="Color-blue">Item: </span>'. $data[$idx]["item_name"] .'</div>
+                <div class="Tag-yellow">PENDING</div>
+            </div>
+            ';
+        }
+
+        $stmt = null;
+    }
+
+    public static function supplierPendingDemands() {
+        $stmt = self::connect()->prepare("SELECT D.did, I.item_name FROM demands D, items I WHERE state = 'pending' AND D.iid = I.iid;");
+
+        if (!$stmt->execute()) {
+            $stmt = null;
+            header("location: ../demander.php?msg=stmtfailed");
+            exit();
+        }
+
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        for ($idx = 0; $idx < $stmt->rowCount(); $idx++) {
+            echo 
+            '
+            <div class="Supplier-item-box">
+                <div><span class="Color-blue">Demand ID: </span>'. $data[$idx]["did"] .'</div>
+                <div><span class="Color-blue">Item: </span>'. $data[$idx]["item_name"] .'</div>
+                <div class="Tag-yellow">PENDING</div>
             </div>
             ';
         }

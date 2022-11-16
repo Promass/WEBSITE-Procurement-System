@@ -2,6 +2,9 @@
 <!-- Description: User interface for supplier account type -->
 
 <?php
+include "Classes/dbh-classes.php";
+include "Classes/display-classes.php";
+
 session_start();
 
 //This if statement makes sure that only suppliers have access to this page
@@ -80,26 +83,9 @@ if (!isset($_SESSION["username"])) {
                 <div class="Supplier-inventory-box" style="margin-right: 10px;">
                     <div class="Bottom-border">Pending Demands</div>
                     <div class="Supplier-item-list-box">
-                        <div class="Supplier-item-box">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>“Shakespeare’s Romeo and Juliet”</div>
-                            <div class="Tag-yellow">PENDING</div>
-                        </div>
-                        <div class="Supplier-item-box" style="height:fit-content;">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>“Shakespeare’s Romeo and Juliet”</div>
-                            <div class="Tag-yellow">PENDING</div>
-                        </div>
-                        <div class="Supplier-item-box" style="height:fit-content;">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>“Shakespeare’s Romeo and Juliet”</div>
-                            <div class="Tag-yellow">PENDING</div>
-                        </div>
-                        <div class="Supplier-item-box" style="height:fit-content;">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>“Shakespeare’s Romeo and Juliet”</div>
-                            <div class="Tag-yellow">PENDING</div>
-                        </div>
+                        <?php
+                            Display::supplierPendingDemands();
+                        ?>
                     </div>
                 </div>
                 <!-- Pending Demands -->
