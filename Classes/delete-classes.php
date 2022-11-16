@@ -18,6 +18,19 @@ class Delete extends Dbh {
         header("location: ../adm-accounts.php?msg=accountdeleted");
     }
 
+    public static function item($itemId) {
+        $stmt = self::connect()->prepare("UPDATE items SET availability = 0 WHERE iid = ?;");
+
+        if (!$stmt->execute(array($itemId))) {
+            $stmt = null;
+            header("location: ../adm-items.php?msg=stmtfailed");
+            exit();
+        }
+
+        $stmt = null;
+        header("location: ../adm-items.php?msg=itemdeleted");
+    }
+
 }
 
 ?>

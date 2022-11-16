@@ -22,7 +22,7 @@ class SignupController extends Signup {
             exit();
         }
 
-        if ($this->usernameTaken($this->username) == true) {
+        if ($this->usernameTaken() == true) {
             header("location: ../adm-accounts.php?msg=useralreadyexist");
             exit();
         }

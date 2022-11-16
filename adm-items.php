@@ -2,6 +2,9 @@
 <!-- Description: Here admin will see the list of existing items for demands. He/she will be able to add new items or delete existing items -->
 
 <?php
+include "Classes/dbh-classes.php";
+include "Classes/display-classes.php";
+
 session_start();
 
 //This if statement makes sure that only admin have access to this page
@@ -80,16 +83,18 @@ if (!isset($_SESSION["username"])) {
 
                 <!-- Create New Item -->
                 <div class="Adm-item-create-item-box">
-                    <div class="Bottom-border">Create New Item</div>
-                    <div class="form-floating">
-                        <input type="text" class="form-control Adm-item-form-input" id="item-name" placeholder="Enter item-name" name="item-name" autocomplete="off">
-                        <label for="item-name">Name</label>
-                    </div>
-                    <div class="form-floating">
-                        <textarea class="form-control Adm-item-form-input Adm-item-form-description" id="description" name="text" placeholder="description goes here"></textarea>
-                        <label for="description">Description</label>
-                    </div>
-                    <button class="Adm-item-create-item-btn">Create Item</button>
+                    <form action="Includes/item-inc.php" method="post">
+                        <div class="Bottom-border">Create New Item</div>
+                        <div class="form-floating">
+                            <input type="text" class="form-control Adm-item-form-input" id="item-name" placeholder="Enter item-name" name="item-name" autocomplete="off">
+                            <label for="item-name">Name</label>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control Adm-item-form-input Adm-item-form-description" id="item-description" name="item-description" placeholder="description goes here"></textarea>
+                            <label for="item-description">Description</label>
+                        </div>
+                        <button class="Adm-item-create-item-btn" type="submit" name="submit">Create Item</button>
+                    </form>
                 </div>
                 <!-- Create New Item -->
 
@@ -97,42 +102,9 @@ if (!isset($_SESSION["username"])) {
                 <div class="Adm-item-inventory-box">
                     <div class="Bottom-border">Inventory</div>
                     <div class="Adm-item-item-list-box">
-                        <div class="Adm-item-item-box">
-                            <div><span class="Color-blue">Item ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Name: </span>Shakespear's Book</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Adm-item-delete-btn">Delete Item</button>
-                        </div>
-                        <div class="Adm-item-item-box">
-                            <div><span class="Color-blue">Item ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Name: </span>Shakespear's Book</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Adm-item-delete-btn">Delete Item</button>
-                        </div>
-                        <div class="Adm-item-item-box">
-                            <div><span class="Color-blue">Item ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Name: </span>Shakespear's Book</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Adm-item-delete-btn">Delete Item</button>
-                        </div>
-                        <div class="Adm-item-item-box">
-                            <div><span class="Color-blue">Item ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Name: </span>Shakespear's Book</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Adm-item-delete-btn">Delete Item</button>
-                        </div>
-                        <div class="Adm-item-item-box">
-                            <div><span class="Color-blue">Item ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Name: </span>Shakespear's Book</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Adm-item-delete-btn">Delete Item</button>
-                        </div>
-                        <div class="Adm-item-item-box">
-                            <div><span class="Color-blue">Item ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Name: </span>Shakespear's Book</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Adm-item-delete-btn">Delete Item</button>
-                        </div>
+                        <?php
+                            Display::adminItems();
+                        ?>
                     </div>
                 </div>
                 <!-- Item Inventory -->
