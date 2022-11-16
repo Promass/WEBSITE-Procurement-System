@@ -24,7 +24,7 @@ class Signup extends Dbh {
     }
 
     protected function setUser($username, $password, $type) {
-        $stmt = $this->connect()->prepare('INSERT INTO users (username, pwd, user_type) VALUES (?, ?, ?);');
+        $stmt = $this->connect()->prepare('INSERT INTO users (username, pwd, user_type, state) VALUES (?, ?, ?, 1);');
 
         if (!$stmt->execute(array($username, $password, $type))) {
             $stmt = null;

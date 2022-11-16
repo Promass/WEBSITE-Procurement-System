@@ -6,7 +6,7 @@
 class Delete extends Dbh {
 
     public static function userAccount($username) {
-        $stmt = self::connect()->prepare("DELETE FROM users WHERE username = ?;");
+        $stmt = self::connect()->prepare("UPDATE users SET state = 0 WHERE username = ?;");
 
         if (!$stmt->execute(array($username))) {
             $stmt = null;

@@ -6,7 +6,7 @@
 class Display extends Dbh {
 
     public static function supplierAccount() {
-        $stmt = self::connect()->prepare("SELECT * FROM users WHERE user_type = 'supplier';");
+        $stmt = self::connect()->prepare("SELECT * FROM users WHERE user_type = 'supplier' AND state = 1;");
 
         if (!$stmt->execute()) {
             $stmt = null;
@@ -34,7 +34,7 @@ class Display extends Dbh {
     }
 
     public static function demanderAccount() {
-        $stmt = self::connect()->prepare("SELECT * FROM users WHERE user_type = 'demander';");
+        $stmt = self::connect()->prepare("SELECT * FROM users WHERE user_type = 'demander' AND state = 1;");
 
         if (!$stmt->execute()) {
             $stmt = null;
