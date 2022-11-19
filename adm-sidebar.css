@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 ::-webkit-scrollbar {
     width: auto;
 }
@@ -27,7 +33,7 @@
     text-align: center;
     background-color: #a1a368;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -36,7 +42,7 @@
     text-align: center;
     background-color: #58af4a;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -45,7 +51,7 @@
     text-align: center;
     background-color: #af4a4a;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -54,7 +60,7 @@
     text-align: center;
     background-color: #b4b4b4;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 

@@ -162,6 +162,18 @@ class Display extends Dbh {
             <div class="Supplier-item-box">
                 <div><span class="Color-blue">Demand ID: </span>'. $data[$idx]["did"] .'</div>
                 <div><span class="Color-blue">Item: </span>'. $data[$idx]["item_name"] .'</div>
+                <form action="Includes/quotation-inc.php" method="post">
+                    <div class="Supplier-bid-box">
+                        <div class="Supplier-bid-input-box">
+                            <button type="button" class="Supplier-bid-minus-btn" onclick="counter(this, \'Supplier-bid-input-' . $data[$idx]["did"] . '\', false)">-</button>
+                            <input type="number" name="bid-price" value="1" min="1" class="Supplier-bid-input" id="Supplier-bid-input-' . $data[$idx]["did"] . '">
+                            <button type="button" class="Supplier-bid-plus-btn" onclick="counter(this, \'Supplier-bid-input-' . $data[$idx]["did"] . '\', true)">+</button>
+                        </div>
+                        <input type="hidden" name="supplier" value="'. $_SESSION["username"] .'">
+                        <input type="hidden" name="demand-id" value="'. $data[$idx]["did"] .'">
+                        <button type="submit" class="Supplier-offer-btn" name="submit" value="supplier-offer">Offer</button>
+                    </div>
+                </form>
                 <div class="Tag-yellow">PENDING</div>
             </div>
             ';

@@ -34,6 +34,7 @@ if (!isset($_SESSION["username"])) {
 </head>
 
 <!-- The function dynamicSidebarMenu('text') adds style to the sidebar menu -->
+
 <body style="background: #151515; height: 100%; color: white; overflow: hidden; display: flex;" onload="dynamicSidebarMenu('Home')">
 
     <!-- Left Sidebar Menu -->
@@ -84,7 +85,7 @@ if (!isset($_SESSION["username"])) {
                     <div class="Bottom-border">Pending Demands</div>
                     <div class="Supplier-item-list-box">
                         <?php
-                            Display::supplierPendingDemands();
+                        Display::supplierPendingDemands();
                         ?>
                     </div>
                 </div>
@@ -156,6 +157,21 @@ if (!isset($_SESSION["username"])) {
 
     <!-- The function dynamicSidebarMenu('text') script -->
     <script src="adm-sidebar.js"></script>
+    
+    <script>
+        function counter(obj, id, increment) {
+            temp = document.getElementById(id)
+            current_qty = parseInt(temp.value)
+
+            if (increment) {
+                temp.value = current_qty + 1
+            } else {
+                if (temp.value > 1) {
+                    temp.value = current_qty - 1
+                }
+            }
+        }
+    </script>
 
 </body>
 

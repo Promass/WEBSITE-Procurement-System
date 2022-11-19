@@ -34,3 +34,66 @@
     margin-bottom: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.Supplier-bid-box {
+    display: flex;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    justify-content: space-between;
+}
+
+.Supplier-bid-input-box {
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Supplier-bid-input {
+    max-width: 88px;
+    border: solid white;
+    text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+.Supplier-bid-minus-btn {
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    background: #5568fe;
+    color: white;
+    padding: 0px 10px;
+    font-weight: bolder;
+}
+
+.Supplier-bid-plus-btn {
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #5568fe;
+    color: white;
+    padding: 0px 10px;
+    font-weight: bolder;
+}
+.Supplier-offer-btn {
+    border: none;
+    border-radius: 10px;
+    background: #5568fe;
+    color: white;
+    padding: 0px 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Supplier-offer-btn:hover,
+.Supplier-bid-minus-btn:hover,
+.Supplier-bid-plus-btn:hover {
+    background: #3b48ad;
+    transition: 0.3s;
+}

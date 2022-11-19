@@ -4,7 +4,7 @@
 <?php
 
 class DemandController extends Demand {
-    //This class is a child of the CreateDEmand class. It provides the Demand class with the item and demander so that a new demand can be created.
+    //This class is a child of the Demand class. It provides the Demand class with the item and demander so that a new demand can be created.
 
     private $itemId;
     private $demander;
