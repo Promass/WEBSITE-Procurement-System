@@ -169,7 +169,7 @@ class Display extends Dbh {
                             <input type="number" name="bid-price" value="1" min="1" class="Supplier-bid-input" id="Supplier-bid-input-' . $data[$idx]["did"] . '">
                             <button type="button" class="Supplier-bid-plus-btn" onclick="counter(this, \'Supplier-bid-input-' . $data[$idx]["did"] . '\', true)">+</button>
                         </div>
-                        <input type="hidden" name="supplier" value="'. $_SESSION["username"] .'">
+                        <input type="hidden" name="username" value="'. $_SESSION["username"] .'">
                         <input type="hidden" name="demand-id" value="'. $data[$idx]["did"] .'">
                         <button type="submit" class="Supplier-offer-btn" name="submit" value="supplier-offer">Offer</button>
                     </div>

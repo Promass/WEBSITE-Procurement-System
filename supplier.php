@@ -85,7 +85,7 @@ if (!isset($_SESSION["username"])) {
                     <div class="Bottom-border">Pending Demands</div>
                     <div class="Supplier-item-list-box">
                         <?php
-                        Display::supplierPendingDemands();
+                            Display::supplierPendingDemands();
                         ?>
                     </div>
                 </div>
