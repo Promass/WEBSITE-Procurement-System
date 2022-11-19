@@ -85,7 +85,7 @@ if (!isset($_SESSION["username"])) {
                     <div class="Bottom-border">Pending Demands</div>
                     <div class="Supplier-item-list-box">
                         <?php
-                            Display::supplierPendingDemands();
+                            Display::supplierPendingDemands($_SESSION["username"]);
                         ?>
                     </div>
                 </div>
@@ -95,27 +95,9 @@ if (!isset($_SESSION["username"])) {
                 <div class="Supplier-inventory-box" style="margin: 0px 10px 0px 10px;">
                     <div class="Bottom-border">Quotations Awaiting Approval</div>
                     <div class="Supplier-item-list-box">
-                        <div class="Supplier-item-box">
-                            <div><span class="Color-blue">Quotation ID: </span>1654165416</div>
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>“Shakespeare’s Romeo and Juliet”</div>
-                            <div><span class="Color-blue">Bid Price: </span>4000$</div>
-                            <div class="Tag-gray">WAITING</div>
-                        </div>
-                        <div class="Supplier-item-box">
-                            <div><span class="Color-blue">Quotation ID: </span>1654165416</div>
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>“Shakespeare’s Romeo and Juliet”</div>
-                            <div><span class="Color-blue">Bid Price: </span>8000$</div>
-                            <div class="Tag-gray">WAITING</div>
-                        </div>
-                        <div class="Supplier-item-box">
-                            <div><span class="Color-blue">Quotation ID: </span>1654165416</div>
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>“Shakespeare’s Romeo and Juliet”</div>
-                            <div><span class="Color-blue">Bid Price: </span>8000$</div>
-                            <div class="Tag-gray">WAITING</div>
-                        </div>
+                        <?php
+                            Display::supplierQuotationsAwaitingApproval($_SESSION["username"]);
+                        ?>
                     </div>
                 </div>
                 <!-- Quotation Awaiting Approvals -->
