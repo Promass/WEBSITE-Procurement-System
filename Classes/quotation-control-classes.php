@@ -22,7 +22,52 @@ class QuotationController extends Quotation {
             exit();
         }
 
-        $this->setQuotation($this->did, $this->supplier, $this->bidPrice);
+        if ($this->bidPrice > 5000) {
+            $this->setQuotation($this->did, $this->supplier, $this->bidPrice);
+        }
+        else {
+            include_once "../Classes/dbh-classes.php";
+            include_once "../Classes/demand-classes.php";
+            include_once "../Classes/demand-control-classes.php";
+
+            self::rejectAllQuotation($this->did);
+            $this->setQuotation($this->did, $this->supplier, $this->bidPrice);
+            DemandController::acceptDemand($this->did);
+        }
+        
+    }
+
+    public static function rejectAllQuotation($did) {
+        if (!empty($did)) {
+            self::setQuotationRejectAll($did);
+        }
+    }
+
+    private static function rejectAllQuotationExcept($did, $qid) {
+        if (!empty($did) && !empty($qid)) {
+            self::setQuotationRejectAllExcept($did, $qid);
+        }
+        else {
+            header("location: ../adm-home.php?msg=couldnotacceptoffer");
+            exit();
+        }
+    }
+
+    public static function acceptQuotation($did, $qid) {
+        if (!empty($did) && !empty($qid)) {
+            self::rejectAllQuotationExcept($did, $qid);
+            self::setQuotationAccept($did, $qid);
+
+            include_once "../Classes/dbh-classes.php";
+            include_once "../Classes/demand-classes.php";
+            include_once "../Classes/demand-control-classes.php";
+
+            DemandController::acceptDemand($did);
+        }
+        else {
+            header("location: ../adm-home.php?msg=couldnotacceptoffer");
+            exit();
+        }
     }
 
     private function emptyInput() {

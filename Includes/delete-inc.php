@@ -5,8 +5,8 @@
 
 if(isset($_POST["submit"])) {
 
-    include "../Classes/dbh-classes.php";
-    include "../Classes/delete-classes.php";
+    include_once "../Classes/dbh-classes.php";
+    include_once "../Classes/delete-classes.php";
 
     if(isset($_POST["username"])) {
         $username = $_POST["username"];

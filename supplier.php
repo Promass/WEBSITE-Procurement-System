@@ -106,27 +106,9 @@ if (!isset($_SESSION["username"])) {
                 <div class="Supplier-inventory-box" style="margin-left: 10px;">
                     <div class="Bottom-border">Previous Quotations</div>
                     <div class="Supplier-item-list-box">
-                        <div class="Supplier-item-box">
-                            <div><span class="Color-blue">Quotation ID: </span>1654165416</div>
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>“Shakespeare’s Romeo and Juliet”</div>
-                            <div><span class="Color-blue">Bid Price: </span>4000$</div>
-                            <div class="Tag-red">REJECTED</div>
-                        </div>
-                        <div class="Supplier-item-box">
-                            <div><span class="Color-blue">Quotation ID: </span>1654165416</div>
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>“Shakespeare’s Romeo and Juliet”</div>
-                            <div><span class="Color-blue">Bid Price: </span>8000$</div>
-                            <div class="Tag-green">ACCEPTED</div>
-                        </div>
-                        <div class="Supplier-item-box">
-                            <div><span class="Color-blue">Quotation ID: </span>1654165416</div>
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>“Shakespeare’s Romeo and Juliet”</div>
-                            <div><span class="Color-blue">Bid Price: </span>4000$</div>
-                            <div class="Tag-red">REJECTED</div>
-                        </div>
+                        <?php
+                            Display::supplierPreviousQuotations($_SESSION["username"]);
+                        ?>
                     </div>
                 </div>
                 <!-- Previous Quotations -->

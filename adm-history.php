@@ -2,6 +2,9 @@
 <!-- Description: Here the admin will see the list of previous demands and quotations. Whether they were rejected or approuved -->
 
 <?php
+include "Classes/dbh-classes.php";
+include "Classes/display-classes.php";
+
 session_start();
 
 //This if statement makes sure that only admin have access to this page
@@ -84,36 +87,9 @@ if (!isset($_SESSION["username"])) {
                 <div class="Adm-history-pre-box" style="margin-right: 10px;">
                     <div class="Bottom-border">Previous Demands</div>
                     <div class="Adm-history-list-box">
-                        <div class="Adm-history-box">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Demander: </span>Username</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div class="Tag-green">ACCEPTED</div>
-                        </div>
-                        <div class="Adm-history-box">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Demander: </span>Username</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div class="Tag-red">REJECTED</div>
-                        </div>
-                        <div class="Adm-history-box">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Demander: </span>Username</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div class="Tag-red">REJECTED</div>
-                        </div>
-                        <div class="Adm-history-box">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Demander: </span>Username</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div class="Tag-green">ACCEPTED</div>
-                        </div>
-                        <div class="Adm-history-box">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Demander: </span>Username</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div class="Tag-green">ACCEPTED</div>
-                        </div>
+                        <?php
+                            Display::adminPreviousDemands();
+                        ?>
                     </div>
                 </div>
                 <!-- Demand History -->
@@ -122,46 +98,9 @@ if (!isset($_SESSION["username"])) {
                 <div class="Adm-history-pre-box" style="margin-left: 10px;">
                     <div class="Bottom-border">Previous Quotations</div>
                     <div class="Adm-history-list-box">
-                        <div class="Adm-history-box">
-                            <div><span class="Color-blue">Quotation ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Supplier: </span>Username</div>
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div><span class="Color-blue">Bid Price: </span>6000$</div>
-                            <div class="Tag-red">REJECTED</div>
-                        </div>
-                        <div class="Adm-history-box">
-                            <div><span class="Color-blue">Quotation ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Supplier: </span>Username</div>
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div><span class="Color-blue">Bid Price: </span>6000$</div>
-                            <div class="Tag-green">ACCEPTED</div>
-                        </div>
-                        <div class="Adm-history-box">
-                            <div><span class="Color-blue">Quotation ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Supplier: </span>Username</div>
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div><span class="Color-blue">Bid Price: </span>6000$</div>
-                            <div class="Tag-red">REJECTED</div>
-                        </div>
-                        <div class="Adm-history-box">
-                            <div><span class="Color-blue">Quotation ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Supplier: </span>Username</div>
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div><span class="Color-blue">Bid Price: </span>6000$</div>
-                            <div class="Tag-green">ACCEPTED</div>
-                        </div>
-                        <div class="Adm-history-box">
-                            <div><span class="Color-blue">Quotation ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Supplier: </span>Username</div>
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div><span class="Color-blue">Bid Price: </span>6000$</div>
-                            <div class="Tag-green">ACCEPTED</div>
-                        </div>
+                        <?php
+                            Display::adminPreviousQuotations();
+                        ?>
                     </div>
                 </div>
                 <!-- Quotation History -->

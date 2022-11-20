@@ -20,7 +20,27 @@ class DemandController extends Demand {
             exit();
         }
 
-        $this->setDemand($this->itemId, $this->demander);
+        $this->setDemandCreate($this->itemId, $this->demander);
+    }
+
+    public static function rejectDemand($did) {
+        if (!empty($did)) {
+            self::setDemandReject($did);
+        }  
+        else {
+            header("location: ../adm-home.php?msg=couldnotrejectdemand");
+            exit();
+        }
+    }
+
+    public static function acceptDemand($did) {
+        if (!empty($did)) {
+            self::setDemandAccept($did);
+        }  
+        else {
+            header("location: ../adm-home.php?msg=couldnotacceptoffer");
+            exit();
+        }
     }
 
     private function emptyInput() {

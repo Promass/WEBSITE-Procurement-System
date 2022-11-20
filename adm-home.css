@@ -40,7 +40,17 @@
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
+    border: none;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: white;
+    text-align: left;
+    width: 345.16px;
+    transition: 0.3s;
+}
+
+.Adm-Home-demand-box:hover {
+    background: #464646;
+    transition: 0.3s;
 }
 
 .Adm-Home-demand-summary-list-box {

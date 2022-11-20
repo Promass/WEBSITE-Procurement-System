@@ -18,9 +18,9 @@ if(isset($_POST["submit"])) {
         header("location: ../adm-accounts.php?msg=invalidtype");
     }
 
-    include "../Classes/dbh-classes.php";
-    include "../Classes/signup-classes.php";
-    include "../Classes/signup-control-classes.php";
+    include_once "../Classes/dbh-classes.php";
+    include_once "../Classes/signup-classes.php";
+    include_once "../Classes/signup-control-classes.php";
     $signup = new SignupController($username, $password, $type);
 
     //This object will call the lsignupUser function which will initiate the user creation process.

@@ -7,9 +7,9 @@ if(isset($_POST["submit"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    include "../Classes/dbh-classes.php";
-    include "../Classes/login-classes.php";
-    include "../Classes/login-control-classes.php";
+    include_once "../Classes/dbh-classes.php";
+    include_once "../Classes/login-classes.php";
+    include_once "../Classes/login-control-classes.php";
     $login = new LoginController($username, $password);
 
     //This object will call the loginUser function which will initiate the login process.

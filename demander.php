@@ -77,26 +77,9 @@ if (!isset($_SESSION["username"])) {
                     <div class="Demander-pending-demand-box" style="margin-bottom: 20px;">
                         <div class="Bottom-border">Previous Demands</div>
                         <div class="Demander-pending-demand-list-box">
-                            <div class="Demander-demand-box">
-                                <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                                <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                                <div class="Tag-green">ACCEPTED</div>
-                            </div>
-                            <div class="Demander-demand-box">
-                                <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                                <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                                <div class="Tag-red">REJECTED</div>
-                            </div>
-                            <div class="Demander-demand-box">
-                                <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                                <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                                <div class="Tag-green">ACCEPTED</div>
-                            </div>
-                            <div class="Demander-demand-box">
-                                <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                                <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                                <div class="Tag-red">REJECTED</div>
-                            </div>
+                            <?php
+                                Display::demanderpreviousDemands($_SESSION["username"]);
+                            ?>
                         </div>
                     </div>
                     <!-- Previous Demands -->

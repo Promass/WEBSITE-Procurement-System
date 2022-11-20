@@ -2,6 +2,9 @@
 <!-- Description: User interface for admin account type -->
 
 <?php
+include "Classes/dbh-classes.php";
+include "Classes/display-classes.php";
+
 session_start();
 
 //This if statement makes sure that only admin have access to this page
@@ -13,6 +16,12 @@ if (!isset($_SESSION["username"])) {
             header("location: Includes/logout-inc.php?submit=submit");
         }
     }
+}
+
+$did = "";
+
+if (isset($_POST["demand-id"])) {
+    $did = $_POST["demand-id"];
 }
 ?>
 
@@ -89,75 +98,18 @@ if (!isset($_SESSION["username"])) {
                 <div class="Adm-Home-pending-demand-box">
                     <div class="Bottom-border">Pending Demand</div>
                     <div class="Adm-Home-pending-demand-list-box">
-                        <div class="Adm-Home-demand-box">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div class="Tag-yellow">PENDING</div>
-                        </div>
-                        <div class="Adm-Home-demand-box">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div class="Tag-yellow">PENDING</div>
-                        </div>
-                        <div class="Adm-Home-demand-box">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div class="Tag-yellow">PENDING</div>
-                        </div>
-                        <div class="Adm-Home-demand-box">
-                            <div><span class="Color-blue">Demand ID: </span>3839201800</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div class="Tag-yellow">PENDING</div>
-                        </div>
+                        <?php
+                            Display::adminPendingDemands();
+                        ?>
                     </div>
                 </div>
                 <!-- Pending Demands -->
 
                 <!-- Demand Summary -->
                 <div class="Adm-Home-demand-summary-box">
-                    <div class="Bottom-border">Demand ID: <span>3839201800</span></div>
-                    <div class="Adm-Home-demand-summary-list-box">
-                        <div class="Adm-Home-demand-info">
-                            <div><span class="Color-blue">Demander: </span>Username</div>
-                            <div><span class="Color-blue">Request Date: </span>12-12-2022</div>
-                            <div><span class="Color-blue">Quotation(s) Received: </span>5</div>
-                            <div><span class="Color-blue">Item: </span>Shakespears Romeo and Juliet</div>
-                            <div><span class="Color-blue">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
-                            <button class="Adm-Home-reject-demand-btn">Reject Demand</button>
-                        </div>
-                        <div class="Adm-Home-demand-quotation">
-                            <div class="Adm-Home-demand-quotation-box">
-                                <div><span class="Color-blue">Quotation ID: </span>1654165416</div>
-                                <div><span class="Color-blue">Supplier: </span>Username</div>
-                                <div><span class="Color-blue">Bid Price: </span>6000$</div>
-                                <button class="Adm-Home-accept-quotation-btn">Accept</button>
-                            </div>
-                            <div class="Adm-Home-demand-quotation-box">
-                                <div><span class="Color-blue">Quotation ID: </span>1654165416</div>
-                                <div><span class="Color-blue">Supplier: </span>Username</div>
-                                <div><span class="Color-blue">Bid Price: </span>6000$</div>
-                                <button class="Adm-Home-accept-quotation-btn">Accept</button>
-                            </div>
-                            <div class="Adm-Home-demand-quotation-box">
-                                <div><span class="Color-blue">Quotation ID: </span>1654165416</div>
-                                <div><span class="Color-blue">Supplier: </span>Username</div>
-                                <div><span class="Color-blue">Bid Price: </span>6000$</div>
-                                <button class="Adm-Home-accept-quotation-btn">Accept</button>
-                            </div>
-                            <div class="Adm-Home-demand-quotation-box">
-                                <div><span class="Color-blue">Quotation ID: </span>1654165416</div>
-                                <div><span class="Color-blue">Supplier: </span>Username</div>
-                                <div><span class="Color-blue">Bid Price: </span>6000$</div>
-                                <button class="Adm-Home-accept-quotation-btn">Accept</button>
-                            </div>
-                            <div class="Adm-Home-demand-quotation-box">
-                                <div><span class="Color-blue">Quotation ID: </span>1654165416</div>
-                                <div><span class="Color-blue">Supplier: </span>Username</div>
-                                <div><span class="Color-blue">Bid Price: </span>6000$</div>
-                                <button class="Adm-Home-accept-quotation-btn">Accept</button>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                        Display::adminDemandSummary($did);
+                    ?>
                 </div>
                 <!-- Demand Summary -->
 
