@@ -52,3 +52,11 @@
 
 </body>
 </html>
+
+<?php
+    if (isset($_GET["msg"])) {
+        include_once "Classes/modal-classes.php";
+        $msg = new Modal($_GET["msg"]);
+        $msg->handleMessage();
+    }
+?>
