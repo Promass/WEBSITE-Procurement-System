@@ -2,8 +2,8 @@
 <!-- Description: Here admin will see the list of existing items for demands. He/she will be able to add new items or delete existing items -->
 
 <?php
-include "Classes/dbh-classes.php";
-include "Classes/display-classes.php";
+include_once "Classes/dbh-classes.php";
+include_once "Classes/display-classes.php";
 
 session_start();
 
@@ -13,7 +13,13 @@ if (!isset($_SESSION["username"])) {
 } else {
     if (isset($_SESSION["usertype"])) {
         if ($_SESSION["usertype"] != "admin") {
-            header("location: Includes/logout-inc.php?submit=submit");
+            header("location: Includes/logout-inc.php?reason=unauthorised");
+        }
+
+        include_once "Includes/timeout-inc.php";
+
+        if (!checkTimeOut()) {
+            header("location: Includes/logout-inc.php?reason=sessiontimedout");
         }
     }
 }

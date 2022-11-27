@@ -2,8 +2,8 @@
 <!-- Description: User interface for supplier account type -->
 
 <?php
-include "Classes/dbh-classes.php";
-include "Classes/display-classes.php";
+include_once "Classes/dbh-classes.php";
+include_once "Classes/display-classes.php";
 
 session_start();
 
@@ -14,6 +14,12 @@ if (!isset($_SESSION["username"])) {
     if (isset($_SESSION["usertype"])) {
         if ($_SESSION["usertype"] != "supplier") {
             header("location: Includes/logout-inc.php?submit=submit");
+        }
+        
+        include_once "Includes/timeout-inc.php";
+
+        if (!checkTimeOut()) {
+            header("location: Includes/logout-inc.php?reason=sessiontimedout");
         }
     }
 }

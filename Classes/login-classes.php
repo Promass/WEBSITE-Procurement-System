@@ -43,6 +43,8 @@ class Login extends Dbh {
             session_start();
             $_SESSION["username"] = $curruser[0]["username"];
             $_SESSION["usertype"] = $curruser[0]["user_type"];
+            $_SESSION["active-timestamp"] = time();
+            $_SESSION["timeout"] = 1800; //This determines the time (seconds) any user can stay logged in without activity
 
             if($_SESSION["usertype"] == "admin") {
                 header("location: ../adm-home.php");

@@ -2,8 +2,8 @@
 <!-- Description: User interface for demander account type -->
 
 <?php
-include "Classes/dbh-classes.php";
-include "Classes/display-classes.php";
+include_once "Classes/dbh-classes.php";
+include_once "Classes/display-classes.php";
 
 session_start();
 
@@ -13,7 +13,13 @@ if (!isset($_SESSION["username"])) {
 } else {
     if (isset($_SESSION["usertype"])) {
         if ($_SESSION["usertype"] != "demander") {
-            header("location: Includes/logout-inc.php?submit=submit");
+            header("location: Includes/logout-inc.php?reason=unauthorised");
+        }
+
+        include_once "Includes/timeout-inc.php";
+
+        if (!checkTimeOut()) {
+            header("location: Includes/logout-inc.php?reason=sessiontimedout");
         }
     }
 }

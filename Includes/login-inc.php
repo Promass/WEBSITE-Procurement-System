@@ -4,6 +4,7 @@
 <?php
 
 if(isset($_POST["submit"])) {
+
     $username = $_POST["username"];
     $password = $_POST["password"];
 
@@ -14,6 +15,7 @@ if(isset($_POST["submit"])) {
 
     //This object will call the loginUser function which will initiate the login process.
     $login->loginUser();
+    
 }
 
 ?>

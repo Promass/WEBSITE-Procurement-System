@@ -113,6 +113,9 @@ class Modal {
                 case 'useralreadyexist':
                     $this->displayModal("User already Exist!", "The username provided has already an active or inactive account in the system.");
                     break;
+                case 'sessiontimedout':
+                    $this->displayModal("Session Timed Out!", "Please log in to the system again");
+                    break;
                 default:
                     exit(0);
             }
