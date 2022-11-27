@@ -19,7 +19,7 @@ if (!isset($_SESSION["username"])) {
         include_once "Includes/timeout-inc.php";
 
         if (!checkTimeOut()) {
-            header("location: Includes/logout-inc.php?reason=sessiontimedout");
+            //header("location: Includes/logout-inc.php?reason=sessiontimedout");
         }
     }
 }

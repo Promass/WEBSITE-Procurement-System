@@ -80,7 +80,7 @@ class Display extends Dbh
             echo
             '
             <div class="Adm-item-item-box">
-                <div><span class="Color-blue">Item ID: </span>' . $data[$idx]["iid"] . '</div>
+                <div><span class="Color-blue">Item ID: </span>IID-0' . $data[$idx]["iid"] . '</div>
                 <div><span class="Color-blue">Name: </span>' . $data[$idx]["item_name"] . '</div>
                 <div><span class="Color-blue">Description: </span>' . $data[$idx]["item_description"] . '</div>
                 <form action="Includes/delete-inc.php" method="post">
@@ -110,7 +110,7 @@ class Display extends Dbh
             echo
             '
             <div class="Demander-item-box">
-                <div><span class="Color-blue">Item ID: </span>' . $data[$idx]["iid"] . '</div>
+                <div><span class="Color-blue">Item ID: </span>IID-0' . $data[$idx]["iid"] . '</div>
                 <div><span class="Color-blue">Name: </span>' . $data[$idx]["item_name"] . '</div>
                 <div><span class="Color-blue">Description: </span>' . $data[$idx]["item_description"] . '</div>
                 <form action="Includes/demand-inc.php" method="post">
@@ -141,7 +141,7 @@ class Display extends Dbh
             echo
             '
             <div class="Demander-demand-box">
-                <div><span class="Color-blue">Demand ID: </span>' . $data[$idx]["did"] . '</div>
+                <div><span class="Color-blue">Demand ID: </span>DID-00' . $data[$idx]["did"] . '</div>
                 <div><span class="Color-blue">Item: </span>' . $data[$idx]["item_name"] . '</div>
                 <div class="Tag-yellow">PENDING</div>
             </div>
@@ -167,7 +167,7 @@ class Display extends Dbh
             echo
             '
             <div class="Supplier-item-box">
-                <div><span class="Color-blue">Demand ID: </span>' . $data[$idx]["did"] . '</div>
+                <div><span class="Color-blue">Demand ID: </span>DID-00' . $data[$idx]["did"] . '</div>
                 <div><span class="Color-blue">Item: </span>' . $data[$idx]["item_name"] . '</div>
                 <form action="Includes/quotation-inc.php" method="post">
                     <div class="Supplier-bid-box">
@@ -205,8 +205,8 @@ class Display extends Dbh
             echo
             '
             <div class="Supplier-item-box">
-                <div><span class="Color-blue">Quotation ID: </span>' . $data[$idx]["qid"] . '</div>
-                <div><span class="Color-blue">Demand ID: </span>' . $data[$idx]["did"] . '</div>
+                <div><span class="Color-blue">Quotation ID: </span>QID-000' . $data[$idx]["qid"] . '</div>
+                <div><span class="Color-blue">Demand ID: </span>DID-00' . $data[$idx]["did"] . '</div>
                 <div><span class="Color-blue">Item: </span>' . $data[$idx]["item_name"] . '</div>
                 <div><span class="Color-blue">Bid Price: </span>' . $data[$idx]["offer"] . '$</div>
                 <div class="Tag-gray">WAITING</div>
@@ -234,7 +234,7 @@ class Display extends Dbh
         '
         <form action="adm-home.php" method="post">
             <button class="Adm-Home-demand-box" type="submit" name="demand-id" value="'. $data[$idx]["did"] .'">
-                <div><span class="Color-blue">Demand ID: </span>' . $data[$idx]["did"] . '</div>
+                <div><span class="Color-blue">Demand ID: </span>DID-00' . $data[$idx]["did"] . '</div>
                 <div><span class="Color-blue">Item: </span>' . $data[$idx]["item_name"] . '</div>
                 <div class="Tag-yellow">PENDING</div>
             </button>
@@ -261,7 +261,7 @@ class Display extends Dbh
             echo
             '
             <div class="Adm-Home-demand-quotation-box">
-                <div><span class="Color-blue">Quotation ID: </span>' . $data[$idx]["qid"] . '</div>
+                <div><span class="Color-blue">Quotation ID: </span>QID-000' . $data[$idx]["qid"] . '</div>
                 <div><span class="Color-blue">Supplier: </span>' . $data[$idx]["supplier"] . '</div>
                 <div><span class="Color-blue">Bid Price: </span>' . $data[$idx]["offer"] . '$</div>
                 <form action="Includes/quotation-inc.php" method="post">
@@ -340,7 +340,7 @@ class Display extends Dbh
         echo
         '
         <div class="Adm-history-box">
-            <div><span class="Color-blue">Demand ID: </span>'. $data[$idx]["did"] .'</div>
+            <div><span class="Color-blue">Demand ID: </span>DID-00'. $data[$idx]["did"] .'</div>
             <div><span class="Color-blue">Demander: </span>'. $data[$idx]["demander"] .'</div>
             <div><span class="Color-blue">Item: </span>'. $data[$idx]["item_name"] .'</div>
         ';
@@ -375,9 +375,9 @@ class Display extends Dbh
             echo
             '
             <div class="Adm-history-box">
-                <div><span class="Color-blue">Quotation ID: </span>'. $data[$idx]["qid"] .'</div>
+                <div><span class="Color-blue">Quotation ID: </span>QID-000'. $data[$idx]["qid"] .'</div>
                 <div><span class="Color-blue">Supplier: </span>'. $data[$idx]["supplier"] .'</div>
-                <div><span class="Color-blue">Demand ID: </span>'. $data[$idx]["did"] .'</div>
+                <div><span class="Color-blue">Demand ID: </span>DID-00'. $data[$idx]["did"] .'</div>
                 <div><span class="Color-blue">Item: </span>'. $data[$idx]["item_name"] .'</div>
                 <div><span class="Color-blue">Bid Price: </span>'. $data[$idx]["offer"] .'$</div>
             ';
@@ -412,7 +412,7 @@ class Display extends Dbh
             echo
             '
             <div class="Demander-demand-box">
-                <div><span class="Color-blue">Demand ID: </span>'. $data[$idx]["did"] .'</div>
+                <div><span class="Color-blue">Demand ID: </span>DID-00'. $data[$idx]["did"] .'</div>
                 <div><span class="Color-blue">Item: </span>'. $data[$idx]["item_name"] .'</div>
             ';
                 if ($data[$idx]["state"] == "accepted") {
@@ -446,8 +446,8 @@ class Display extends Dbh
             echo
             '
             <div class="Supplier-item-box">
-                <div><span class="Color-blue">Quotation ID: </span>'. $data[$idx]["qid"] .'</div>
-                <div><span class="Color-blue">Demand ID: </span>'. $data[$idx]["did"] .'</div>
+                <div><span class="Color-blue">Quotation ID: </span>QID-000'. $data[$idx]["qid"] .'</div>
+                <div><span class="Color-blue">Demand ID: </span>DID-00'. $data[$idx]["did"] .'</div>
                 <div><span class="Color-blue">Item: </span>'. $data[$idx]["item_name"] .'</div>
                 <div><span class="Color-blue">Bid Price: </span>'. $data[$idx]["offer"] .'$</div>
             ';
@@ -463,6 +463,50 @@ class Display extends Dbh
             ';
         }
     
+        $stmt = null;
+    }
+
+    public static function adminRevenue()
+    {
+        $stmt = self::connect()->prepare("SELECT SUM(offer) AS admrevenue FROM quotations WHERE state = 'accepted';");
+
+        if (!$stmt->execute()) {
+            $stmt = null;
+            header("location: ../adm-accounts.php?msg=stmtfailed");
+            exit();
+        }
+
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($data[0]["admrevenue"] != 0) {
+            echo '<span class="Adm-Home-revenue">Expense: <span style="color: #af4a4a">'.$data[0]["admrevenue"].'$</span></span>';
+        }
+        else {
+            echo '<span class="Adm-Home-revenue">Expense: <span style="color: #af4a4a">0$</span></span>';
+        }
+
+        $stmt = null;
+    }
+
+    public static function supplierRevenue($supplier)
+    {
+        $stmt = self::connect()->prepare("SELECT SUM(offer) AS suprevenue FROM quotations WHERE state = 'accepted' AND supplier = ?;");
+
+        if (!$stmt->execute(array($supplier))) {
+            $stmt = null;
+            header("location: ../adm-accounts.php?msg=stmtfailed");
+            exit();
+        }
+
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($data[0]["suprevenue"] != 0) {
+            echo '<span class="Suppplier-revenue">Profit: <span style="color: #58af4a">'.$data[0]["suprevenue"].'$</span></span>';
+        }
+        else {
+            echo '<span class="Suppplier-revenue">Profit: <span style="color: #58af4a">0$</span></span>';
+        }
+
         $stmt = null;
     }
 

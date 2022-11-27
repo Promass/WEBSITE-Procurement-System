@@ -81,6 +81,11 @@ if (!isset($_SESSION["username"])) {
             <!-- Supplier Revenue -->
             <div class="Supplier-revenue-box">
                 <div class="Bottom-border">Revenue Data</div>
+                <div style="height: 167px; display: flex; justify-content: center; align-items: center;">
+                    <?php
+                        Display::supplierRevenue($_SESSION["username"]);
+                    ?>
+                </div>
             </div>
             <!-- Supplier Revenue -->
 

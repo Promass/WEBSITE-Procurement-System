@@ -4,6 +4,8 @@ Once the user clickes "Reject Demand" in the adm-home.php page, this script will
 
 <?php
 
+session_start();
+
 if(isset($_POST["submit"])) {
 
     include_once "timeout-inc.php";

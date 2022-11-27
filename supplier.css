@@ -97,3 +97,8 @@ input[type=number]{
     background: #3b48ad;
     transition: 0.3s;
 }
+
+.Suppplier-revenue {
+    font-size: 100px;
+    color: #5568fe;
+}

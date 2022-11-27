@@ -95,6 +95,11 @@ if (isset($_POST["demand-id"])) {
             <!-- Admin Revenue -->
             <div class="Adm-Home-revenue-box">
                 <div class="Bottom-border">Revenue Data</div>
+                <div style="height: 167px; display: flex; justify-content: center; align-items: center;">
+                    <?php
+                        Display::adminRevenue();
+                    ?>
+                </div>
             </div>
             <!-- Admin Revenue -->
 
