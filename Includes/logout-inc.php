@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
     header("location: ../index.php?msg=signedout");
 }
 
-
+//This if will run if someone tries to access any page unauthorised or if an user is timed out
 if (isset($_GET["reason"])) {
     session_start();
     session_unset();

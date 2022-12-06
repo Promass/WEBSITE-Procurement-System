@@ -18,6 +18,7 @@ if (!isset($_SESSION["username"])) {
 
         include_once "Includes/timeout-inc.php";
 
+        //This if statement makes sure that the user did not time out
         if (!checkTimeOut()) {
             header("location: Includes/logout-inc.php?reason=sessiontimedout");
         }
@@ -128,6 +129,7 @@ if (!isset($_SESSION["username"])) {
 </HTML>
 
 <?php
+    //This handle all kinds of error messages
     if (isset($_GET["msg"])) {
         include_once "Classes/modal-classes.php";
         $msg = new Modal($_GET["msg"]);

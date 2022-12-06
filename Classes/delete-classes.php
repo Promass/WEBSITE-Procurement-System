@@ -1,9 +1,10 @@
 <!-- Page Name: delete-classes.php -->
-<!-- Description: This page has a class that deletes various data present in the database -->
+<!-- Description: This page has a class that deactivates various data (accounts and items) present in the database -->
 
 <?php
 
 class Delete extends Dbh {
+    //This class is the child of the Dbh class. It uses it's parent to connect to the database.
 
     public static function userAccount($username) {
         $stmt = self::connect()->prepare("UPDATE users SET state = 0 WHERE username = ?;");

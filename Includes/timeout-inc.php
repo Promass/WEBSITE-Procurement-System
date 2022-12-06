@@ -1,3 +1,6 @@
+<!-- Page Name: timeout-inc.php -->
+<!-- Description: Contains a function that checks if user timed out or not. -->
+
 <?php
 
 function checkTimeOut() {

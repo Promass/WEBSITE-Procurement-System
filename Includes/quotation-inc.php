@@ -1,5 +1,6 @@
 <!-- Page Name: quotation-inc.php -->
-<!-- Description: Once the supplier clickes "Offer" in the supplier.php page, this script will run. -->
+<!-- Description: Once the supplier clickes "Offer" in the supplier.php page, this script will run. 
+Once the admin clicks accept on one of the quotations, this script will run-->
 
 <?php
 
@@ -9,6 +10,7 @@ if(isset($_POST["submit"])) {
 
     include_once "timeout-inc.php";
 
+    //If user timed out we dont run the script
     if (checkTimeOut()) {
         include_once "../Classes/dbh-classes.php";
         include_once "../Classes/quotation-classes.php";

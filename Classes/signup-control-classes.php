@@ -1,5 +1,5 @@
 <!-- Page Name: signup-control-classes.php -->
-<!-- Description: This page contains a class which checks the input for any abnormalities -->
+<!-- Description: This page contains a class which checks the signup input for any abnormalities -->
 
 <?php
 

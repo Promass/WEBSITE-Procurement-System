@@ -1,10 +1,10 @@
 <!-- Page Name: demand-classes.php -->
-<!-- Description: This page contains a class which creates a new demand and puts it into the database. It also contains the functionality to reject demands. -->
+<!-- Description: This page contains a class which creates a new demand and puts it into the database. It also contains the functionality to reject demands and accept demands. -->
 
 <?php
 
 class Demand extends Dbh {
-    //This class is the child of the Dbh class. It uses it's parent to connect to the database. Once connected, this class creates a new user in the database
+    //This class is the child of the Dbh class. It uses it's parent to connect to the database.
 
     protected function setDemandCreate($itemId, $demander) {
         $stmt = $this->connect()->prepare('INSERT INTO demands (iid, demander, state) VALUES (?, ?, "pending");');

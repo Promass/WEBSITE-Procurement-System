@@ -1,10 +1,11 @@
 <!-- Page Name: display-classes.php -->
-<!-- Description: This page has a class that displays various data present in the database -->
+<!-- Description: This page has a class that displays various data present in the database. The function name indicates what kind of data is being displayed. -->
 
 <?php
 
 class Display extends Dbh
 {
+    //This class is the child of the Dbh class. It uses it's parent to connect to the database.
 
     public static function supplierAccounts()
     {

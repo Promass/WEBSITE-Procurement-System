@@ -1,10 +1,10 @@
 <!-- Page Name: item-classes.php -->
-<!-- Description: This page contains a class which creates a new item and puts it into the database (if the item does not already exist) -->
+<!-- Description: This page contains a class which creates a new item and puts it into the database. -->
 
 <?php
 
 class CreateItem extends Dbh {
-    //This class is the child of the Dbh class. It uses it's parent to connect to the database. Once connected, this class creates a new user in the database
+    //This class is the child of the Dbh class. It uses it's parent to connect to the database.
     
     protected function itemExistance($itemName) {
         $stmt = $this->connect()->prepare('SELECT * FROM items WHERE item_name = ?;');

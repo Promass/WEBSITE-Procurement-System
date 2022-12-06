@@ -4,7 +4,7 @@
 <?php
 
 class Signup extends Dbh {
-    //This class is the child of the Dbh class. It uses it's parent to connect to the database. Once connected, this class creates a new user in the database
+    //This class is the child of the Dbh class. It uses it's parent to connect to the database. Once connected, this class creates a new user in the database.
     
     protected function userExistance($username) {
         $stmt = $this->connect()->prepare('SELECT * FROM users WHERE username = ?;');

@@ -1,5 +1,5 @@
 <!-- Page Name: adm-accounts.php -->
-<!-- Description: Here the admin will be able to add new accounts of type demander and supplier. The list of existing accounts will be listed -->
+<!-- Description: Here the admin will be able to add new accounts of type demander and supplier. The list of active accounts will be listed -->
 
 <?php
 include_once "Classes/dbh-classes.php";
@@ -18,8 +18,9 @@ if (!isset($_SESSION["username"])) {
 
         include_once "Includes/timeout-inc.php";
 
+        //This if statement makes sure that the user did not time out
         if (!checkTimeOut()) {
-            //header("location: Includes/logout-inc.php?reason=sessiontimedout");
+            header("location: Includes/logout-inc.php?reason=sessiontimedout");
         }
     }
 }
@@ -153,6 +154,7 @@ if (!isset($_SESSION["username"])) {
 </html>
 
 <?php
+    //This handle all kinds of error messages
     if (isset($_GET["msg"])) {
         include_once "Classes/modal-classes.php";
         $msg = new Modal($_GET["msg"]);

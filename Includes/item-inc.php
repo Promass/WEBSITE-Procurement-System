@@ -9,6 +9,7 @@ if(isset($_POST["submit"])) {
 
     include_once "timeout-inc.php";
 
+    //If user timed out we dont run the script
     if (checkTimeOut()) {
         $itemName = $_POST["item-name"];
         $itemDescription = $_POST["item-description"];

@@ -1,10 +1,10 @@
 <!-- Page Name: quotation-classes.php -->
-<!-- Description: This page contains a class which creates a new quotation and puts it into the database -->
+<!-- Description: This page contains a class which creates a new quotation and puts it into the database. It also handles quotations acception and rejection. -->
 
 <?php
 
 class Quotation extends Dbh {
-    //This class is the child of the Dbh class. It uses it's parent to connect to the database. Once connected, this class creates a new user in the database
+    //This class is the child of the Dbh class. It uses it's parent to connect to the database.
 
     protected function setQuotation($did, $supplier, $bidPrice) {
         if ($bidPrice > 5000) {

@@ -54,6 +54,7 @@
 </html>
 
 <?php
+    //This handle all kinds of error messages
     if (isset($_GET["msg"])) {
         include_once "Classes/modal-classes.php";
         $msg = new Modal($_GET["msg"]);

@@ -1,5 +1,5 @@
 <!-- Page Name: login-classes.php -->
-<!-- Description: This page contains a class that checks if the username and password provided exists and matches one in the database. -->
+<!-- Description: This page contains a class does username and password verification and logs in the user. -->
 
 <?php
 
